@@ -6,10 +6,15 @@ h1 {
     font-size: 60px;
 }
 
+h2 {
+    padding: 50px;
+
+}
+
 header {
-padding: 50px;
+padding: 100px;
 text-align: center;
-background: #BBBBBB;
+background: #659B5E;
 background-image: url(../images/treetops.jpg);
 background-size: cover;
 background-position: center;
@@ -19,10 +24,19 @@ color:  #0A122A;
 }
 nav {
     display: flex;
-    background: #942911;
+    background: #445552;
 
 }
 
+button {
+padding: 5px;
+display: flex;
+align-content: flex-start;
+margin-left: 40px;
+background-color: #659B5E;
+border: #BBBBBB;
+color: white;
+}
 
 main{
 
@@ -31,7 +45,7 @@ display: flex;
 
 aside {
     flex: 1;
-    background-color: #0A122A;
+    background-color: #BBBBBB;
     padding: 10px;
     text-align: left;
     font-size: 150%;
@@ -39,9 +53,15 @@ aside {
 
 }
 
+.btn {
+    color: white;
+    background-color: #659B5E;
+    border: #BBBBBB;
+}
+
 .container {
     flex: 4;
-    background-color: #2274A5;
+    background-color: #493B2A;
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -56,12 +76,12 @@ aside {
     padding: 10px;
     flex: 0 0 250px;
     margin: 20px;
-
+    background: #445552;
 }
 
 .card header {
     border-radius: 30px 30px 0 0;
-    background:#BBBBBB ;
+    background:#659B5E ;
     padding: 20px;
     height: 80px;
 
@@ -75,3 +95,15 @@ img {
 
 
 }
+
+footer {
+    background: #659B5E;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    main,
+    nav {
+      flex-direction: column;
+    }
+  }
