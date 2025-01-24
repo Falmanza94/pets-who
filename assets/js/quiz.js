@@ -37,7 +37,7 @@ let currentScore = 0
                                     alert("YOU DID IT!")
             currentScore++
         } else { 
-            for 
+            for ()
         alert("you suck”)
     }
 
