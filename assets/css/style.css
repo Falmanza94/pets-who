@@ -1,3 +1,77 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
-    font-size: 16px;
+    font-size: 60px;
+}
+
+header {
+padding: 50px;
+text-align: center;
+background: #BBBBBB;
+background-image: url(../images/treetops.jpg);
+background-size: cover;
+background-position: center;
+color:  #0A122A;
+
+
+}
+nav {
+    display: flex;
+    background: #942911;
+
+}
+
+
+main{
+
+display: flex;
+}
+
+aside {
+    flex: 1;
+    background-color: #0A122A;
+    padding: 10px;
+    text-align: left;
+    font-size: 150%;
+    flex-wrap: wrap;
+
+}
+
+.container {
+    flex: 4;
+    background-color: #2274A5;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.card {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 30px 30px 0 0;
+    padding: 10px;
+    flex: 0 0 250px;
+    margin: 20px;
+
+}
+
+.card header {
+    border-radius: 30px 30px 0 0;
+    background:#BBBBBB ;
+    padding: 20px;
+    height: 80px;
+
+
+}
+
+img {
+    width: 226px;
+    height: 150px;
+    
+
+
 }
