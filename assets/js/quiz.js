@@ -1,7 +1,8 @@
 const mainElement = document.querySelector('main');
 const back = document.querySelector('#back');
 
-const birds = () {
+const birds = [
+{
     question = "What bird is this one?",
         answer = 0,
         possibleAnswers = ["Toucan”, “Pelican”, “etc…”]
@@ -13,6 +14,7 @@ const birds = () {
     possibleAnswers = ["Toucan”, “Pelican”, “etc…”]
     image = "image.png"
 }
+]
 
 let currentQuestion = 0
 let highScore = localStorage.getItem("score”) || 0
