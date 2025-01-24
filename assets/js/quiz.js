@@ -1,49 +1,59 @@
 const mainElement = document.querySelector('main');
 const back = document.querySelector('#back');
 
-const birds = [
-{
-    question = "What bird is this one?",
-        answer = 0,
-        possibleAnswers = ["Toucan”, “Pelican”, “etc…”]
-        image = "image.png"
-    //repeat for more questions
+const quizData = [
     {
-                question = "What bird is this one ?"
-    answer = 0
-    possibleAnswers = ["Toucan”, “Pelican”, “etc…”]
-    image = "image.png"
+        image: 'pets-who/images/american-robin.jpg', // Replace with actual image path
+        options: ['american-robin', 'Eagle', 'Parrot'],
+        answer: 'american-robin'
+    },
+    {
+        image: 'pets-who/images/bald-eagles.jpg', // Replace with actual image path
+        options: ['bald-eagle', 'Ostrich', 'Flamingo'],
+        answer: 'bald-eagle'
+    },
+];
+
+let currentQuestionIndex = 0;
+
+function loadQuestion() {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const birdImage = document.getElementById('bird-image');
+    const optionsContainer = document.getElementById('options');
+    const nextButton = document.getElementById('next-button');
+
+    birdImage.src = currentQuestion.image;
+    optionsContainer.innerHTML = '';
+
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.onclick = () => checkAnswer(option);
+        optionsContainer.appendChild(button);
+    });
+
+    nextButton.style.display = 'none'; // Hide next button initially
 }
-]
 
-let currentQuestion = 0
-let highScore = localStorage.getItem("score”) || 0
-let currentScore = 0
-    function renderQuestion() {
-                        const quizQuestion = birds[currentQuestion]
-                        document.querySelector("question”).textContent = quizQuestion.question
-    
-        for (let i = 0; i < quizQuestion.possibleAnswers.length; +ii) {
-                            const li = document.createElement(‘li’)
-                            li.textContent = quizQuestion.possibleAnswers[i]
-                            li.dataset.answer = i
+function checkAnswer(selectedOption) {
+    const currentQuestion = quizData[currentQuestionIndex];
+    const nextButton = document.getElementById('next-button');
 
-                            document.querySelector("#answers”).appendChild(li)
-                            )
-                        }
-
-                        answersElement.addEventListener(“click”, function () {
-                            If(event.target.matches(‘li’)) {
-                                const answer = event.targe.darase.answer
-                                quizQuestion[currentQuestion].answer === answer) {
-                                    alert("YOU DID IT!")
-            currentScore++
-        } else { 
-            for 
-        alert("you suck”)
+    if (selectedOption === currentQuestion.answer) {
+        alert('Correct!');
+    } else {
+        alert('Wrong! The correct answer is ' + currentQuestion.answer);
     }
 
-setTImeout(function () {
-    currentQuestion++
-    renderQuestion()
-}.3000
+    nextButton.style.display = 'block'; // Show next button after answering
+}
+
+document.getElementById('next-button').onclick = () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+    } else {
+        alert('Quiz completed!');
+        // Optionally, reset the quiz or show results
+    }
+};
