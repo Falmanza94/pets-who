@@ -1,3 +1,28 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
-    font-size: 16px;
+    font-size: 60px;
+}
+
+header {
+padding: 50px;
+text-align: center;
+background: blue;
+color: white;
+
+}
+
+main{
+
+display: flex;
+}
+
+aside {
+    flex: 30%;
+    background-color: blueviolet;
+    padding: 20px;
+    flex-wrap: wrap;
+
 }
