@@ -13,6 +13,12 @@ background: blue;
 color: white;
 
 }
+nav {
+    display: flex;
+    background: red;
+
+}
+
 
 main{
 
@@ -20,9 +26,31 @@ display: flex;
 }
 
 aside {
-    flex: 30%;
+    flex: 1;
     background-color: blueviolet;
-    padding: 20px;
+    padding: 10px;
+    text-align: left;
+    font-size: 150%;
     flex-wrap: wrap;
+
+}
+
+.container {
+    flex: 4;
+    background-color: green;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.card {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    padding: 10px;
+    flex: 0 0 250px;
+    margin: 20px;
 
 }
