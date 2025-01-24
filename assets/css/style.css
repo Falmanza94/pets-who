@@ -9,13 +9,13 @@ h1 {
 header {
 padding: 50px;
 text-align: center;
-background: blue;
+background: #BBBBBB;
 color: white;
 
 }
 nav {
     display: flex;
-    background: red;
+    background: #942911;
 
 }
 
@@ -27,7 +27,7 @@ display: flex;
 
 aside {
     flex: 1;
-    background-color: blueviolet;
+    background-color: #0A122A;
     padding: 10px;
     text-align: left;
     font-size: 150%;
@@ -37,7 +37,7 @@ aside {
 
 .container {
     flex: 4;
-    background-color: green;
+    background-color: #2274A5;
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -52,5 +52,10 @@ aside {
     padding: 10px;
     flex: 0 0 250px;
     margin: 20px;
+
+}
+
+.card header {
+    border-radius: 30px;
 
 }
