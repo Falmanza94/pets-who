@@ -10,10 +10,11 @@ header {
 padding: 50px;
 text-align: center;
 background: #BBBBBB;
-color: white;
 background-image: url(../images/treetops.webp);
 background-size: cover;
 background-position: center;
+color:  #0A122A;
+
 
 }
 nav {
@@ -63,5 +64,14 @@ aside {
     background:#BBBBBB ;
     padding: 20px;
     height: 80px;
+
+
+}
+
+img {
+    width: 226px;
+    height: 150px;
+    
+
 
 }
