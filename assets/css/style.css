@@ -99,16 +99,13 @@ aside {
     height: 80px;
 }
 
-.hidden {
-    display: none;
+.card p {
+    margin-top: 10px;
 }
 
 img {
     width: 226px;
     height: 200px;
-    
-
-
 }
 
 footer {
