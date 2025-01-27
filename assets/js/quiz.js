@@ -2,13 +2,13 @@ const mainElement = document.querySelector('main');
 const start = document.querySelector('#start');
 
 const quizQuestionElement = document.querySelector('#quizQuestion');
-const answerElement = document.querySelector('#answer');
+const birdImageElement = document.querySelector('#birdImage'); // Select the image element
 const possibleAnswersElement = document.querySelector('#possibleAnswers');
 
 start.addEventListener('click', function () {
     const birds = [
         { name: 'American Robin', image:'assets/images/american-robin.jpg' },
-        { name: 'Bald Eagle', image: 'assets/images/bald-eagle.jpg' },
+        { name: 'Bald Eagle', image: 'assets/images/bald-eagles.jpg' },
         { name: 'Baltimore Oriole', image: 'assets/images/baltimore-oriole.jpg' },
         { name: 'Barred Owl', image: 'assets/images/barred-owl.jpg' },
         { name: 'Black Capped Chickadee', image: 'assets/images/black-capped-chickadee.jpg' },
@@ -17,7 +17,7 @@ start.addEventListener('click', function () {
         { name: 'Carolina Wren', image: 'assets/images/carolina-wren.jpg' },
         { name: 'Cedar Waxwing', image: 'assets/images/cedar-waxwing.jpg' },
         { name: 'Common Grackle', image: 'assets/images/common-grackle.jpg' },
-        { name: 'Coopers Hawk', image: 'assets/images/coopes-hawk.jpg' },
+        { name: 'Coopers Hawk', image: 'assets/images/coopers-hawk.jpg' },
         { name: 'Eastern Bluebirds', image: 'assets/images/eastern-bluebirds.jpg' },
         { name: 'Great Egret', image: 'assets/images/great-egret.jpg' },
         { name: 'Indigo Bunting', image: 'assets/images/indigo-bunting.jpg' },
@@ -28,46 +28,54 @@ start.addEventListener('click', function () {
     let quizQuestion = 0;
     let highScore = localStorage.getItem('score') || 0;
     let currentScore = 0;
+    let usedBirds = []; // Initialize used birds array
 
     function renderQuestion() {
-        //Clear previous answers
-        possibleAnswersElement.innerHTML = '';
-
-        //Swet the current quiz question
-        quizQuestionElement.textContent = "What bird is this one?";
+        possibleAnswersElement.innerHTML = ''; //Clear previous answers
+        quizQuestionElement.textContent = "What bird is this one?"; //Set the current quiz question
 
         //Create possible answers
-        const correctBird = birds[quizQuestion].name; // Get the correct answer
-        const shuffledBirds = birds.sort(() => 0.5 - Math.random()).slice(0,4); //Randomly select 4 birds
-        shuffledBirds.forEach((bird) => {
+        const correctBird = birds
+            .filter(bird => !usedBirds.includes(bird.name)) // Exclude used birds by name
+            .sort(() => 0.5 - Math.random())
+            .slice(0,1)[0]; // Randomly select one correct answer (get the first element)
+
+        birdImageElement.src = correctBird.image; // Set the image source to the correct bird's image
+
+        const otherBirds = birds
+            .filter(bird => bird.name !== correctBird.name) // Exclude the correct bird by name
+            .sort(() => 0.5 - Math.random())
+            .slice(0,3); //Randomly select three incorrect birds
+
+        const possibleBirds = [correctBird, ...otherBirds];
+        possibleBirds.sort(() => 0.5 - Math.random()); // Shuffle again to mix the correct answer
+
+        possibleBirds.forEach((bird) => {
             const li = document.createElement('li');
-            li.textContent = bird;
-            li.dataset.answer = bird; // Store the bird name as the answer
+            li.textContent = bird.name; // Use the bird's name
+            li.dataset.answer = bird.name; // Store the bird name as the answer
             possibleAnswersElement.appendChild(li);
         });
 
-        // Add event listener for answer selection
-        possibleAnswersElement.addEventListener('click', function (event) {
-            if (event.target.matches('li')) {
-                const selectedAnswer = event.target.dataset.answer;
-                if (selectedAnswer === correctBird) {
-                    alert("YOU DID IT!");
-                    currentScore++;;
-                } else {
-                    alert("Wrong anser! The correct answer was " + correctBird);
-                }
-
-                quizQuestion++; // Move to the next question
-                if (quizQuestion < birds.length) {
-                    renderQuestion();
-                } else {
-                    alert("Quiz finished! Your score: " + currentScore);
-                    // Optionally reset the quiz or show final score
-                }
+    // Add event listener for answer selection
+    possibleAnswersElement.addEventListener('click', function (event) {
+        if (event.target.matches('li')) {
+            const selectedAnswer = event.target.dataset.answer;
+            if (selectedAnswer === correctBird.name) {
+                alert("CORRECT!");
+                currentScore++;
+            } else {
+                alert("Wrong answer! The correct answer was " + correctBird.name);
             }
-        });
-    }
-
+            quizQuestion++;
+            if (quizQuestion < birds.length) {
+                renderQuestion();
+            } else {
+                alert("Quiz finished! Your score: " + currentScore);    
+            }
+        }});
+    }  
+    
     // Initialize the quiz
     renderQuestion();
-});
+})
