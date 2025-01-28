@@ -26,7 +26,7 @@ start.addEventListener('click', function () {
     ];
 
     let quizQuestion = 0;
-    let highScore = localStorage.getItem('score') || 0;
+    //let highScore = localStorage.getItem('score') || 0;
     let currentScore = 0;
     let usedBirds = []; // Initialize used birds array
     let correctBird;
@@ -40,7 +40,7 @@ start.addEventListener('click', function () {
             .filter(bird => !usedBirds.includes(bird.name)) // Exclude used birds by name
             .sort(() => 0.5 - Math.random())
             .slice(0,1)[0]; // Randomly select one correct answer (get the first element)
-
+            usedBirds.push (correctBird.name)
         birdImageElement.src = correctBird.image; // Set the image source to the correct bird's image
 
         const otherBirds = birds
@@ -78,7 +78,23 @@ start.addEventListener('click', function () {
                 alert("Quiz finished! Your score: " + currentScore);    
             }
         }});
+
+        // Function to save a new high score
+        function saveHighScore(currentScore) {
+        // Get the current high score from local storage
+        const currentHighScore = localStorage.getItem('highScore');
+    
+        // If there is no high score or the new score is higher, save it
+        if (!currentHighScore || currentScore > currentHighScore) {
+            localStorage.setItem('highScore', currentScore);
+            console.log("New high score saved: " + currentScore);
+        } else {
+            console.log("Current high score remains: " + currentHighScore);
+        }
+        }
     
     // Initialize the quiz
     renderQuestion();
+    saveHighScore();
+    console.log(usedBirds);
 })
