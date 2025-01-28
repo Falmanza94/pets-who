@@ -66,7 +66,6 @@ aside {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-
 }
 
 .card {
@@ -77,23 +76,36 @@ aside {
     flex: 0 0 250px;
     margin: 20px;
     background: #445552;
+    cursor: pointer;
 }
+
+.card:hover {
+    background-color: rgb(228, 99, 19);
+    font-size: 120%;
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.card:active {
+    box-shadow: 0 0 10px #f2e315 inset;
+}
+
 
 .card header {
     border-radius: 30px 30px 0 0;
     background:#659B5E ;
     padding: 20px;
     height: 80px;
+}
 
-
+.card p {
+    margin-top: 10px;
 }
 
 img {
     width: 226px;
-    height: 150px;
-    
-
-
+    height: 200px;
 }
 
 footer {
