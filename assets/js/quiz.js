@@ -29,13 +29,14 @@ start.addEventListener('click', function () {
     let highScore = localStorage.getItem('score') || 0;
     let currentScore = 0;
     let usedBirds = []; // Initialize used birds array
+    let correctBird;
 
     function renderQuestion() {
         possibleAnswersElement.innerHTML = ''; //Clear previous answers
         quizQuestionElement.textContent = "What bird is this one?"; //Set the current quiz question
 
         //Create possible answers
-        const correctBird = birds
+        correctBird = birds
             .filter(bird => !usedBirds.includes(bird.name)) // Exclude used birds by name
             .sort(() => 0.5 - Math.random())
             .slice(0,1)[0]; // Randomly select one correct answer (get the first element)
@@ -57,6 +58,9 @@ start.addEventListener('click', function () {
             possibleAnswersElement.appendChild(li);
         });
 
+        
+    }  
+
     // Add event listener for answer selection
     possibleAnswersElement.addEventListener('click', function (event) {
         if (event.target.matches('li')) {
@@ -74,7 +78,6 @@ start.addEventListener('click', function () {
                 alert("Quiz finished! Your score: " + currentScore);    
             }
         }});
-    }  
     
     // Initialize the quiz
     renderQuestion();
