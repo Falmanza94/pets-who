@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 h1 {
@@ -8,10 +9,10 @@ h1 {
 
 h2 {
     padding: 50px;
-
 }
 
 header {
+<<<<<<< HEAD
 padding: 100px;
 text-align: center;
 background: #659B5E;
@@ -36,36 +37,70 @@ margin-left: 40px;
 background-color: #659B5E;
 border: #BBBBBB;
 color: rgb(7, 75, 41);
+=======
+    padding: 100px;
+    text-align: center;
+    background-image: url(../images/treetops.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+button {
+    padding: 5px;
+    display: flex;
+    align-content: flex-start;
+    margin-left: 40px;
+    background-color: #659B5E;
+    border: #BBBBBB;
+    color: white;
+>>>>>>> fe1b16db97abb9b6f41bfe3dc688464a3ec910cc
 }
 
 main{
-
-display: flex;
+    display: flex;
+    background: #493B2A;
 }
 
 aside {
-    flex: 1;
+    flex: 0 1 100px;
     background-color: #BBBBBB;
     padding: 10px;
     text-align: left;
     font-size: 150%;
     flex-wrap: wrap;
+}
 
+.website-title {
+    color: #ffcc00;
+    font-size: 100px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5),
+    2px 2px 0 rgba(0, 0, 0, 0.5), 
+    3px 3px 0 rgba(0, 0, 0, 0.5), 
+    4px 4px 0 rgba(0, 0, 0, 0.5); /* Multiple shadows for a 3D effect */
 }
 
 .btn {
+<<<<<<< HEAD
     color: rgb(6, 106, 76);
+=======
+    width: 250px;
+    height: 100px;
+    font-size: 35px;
+    color: white;
+>>>>>>> fe1b16db97abb9b6f41bfe3dc688464a3ec910cc
     background-color: #659B5E;
     border: #BBBBBB;
 }
 
 .container {
-    flex: 4;
+    display: flex;
+    flex: 2 1 200px;
+    flex-wrap: wrap;
     background-color: #493B2A;
     padding: 50px;
-    display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
+    
 }
 
 .card {
