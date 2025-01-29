@@ -5,6 +5,15 @@ const quizQuestionElement = document.querySelector('#quizQuestion');
 const birdImageElement = document.querySelector('#birdImage'); // Select the image element
 const possibleAnswersElement = document.querySelector('#possibleAnswers');
 
+let popup = document.getElementById("popup")
+
+function openPopup(){
+    popup.classList.add("open-popup");
+}
+function closePopup(){
+    popup.classList.remove("open-popup");
+}
+
 start.addEventListener('click', function () {
     const birds = [
         { name: 'American Robin', image:'assets/images/american-robin.jpg' },

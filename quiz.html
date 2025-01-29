@@ -16,6 +16,14 @@
     </header>
     <nav>
         <button id="back" class="back" onclick='window.open("./index.html")' aria-label="Go back">Back</button>
+        <div class="container" >
+            <button type="instructions" class="btn" onclick="openPopup()">Instructions</button>
+            <div class="popup" id="popup">
+                <h2>Thanks</h2>
+                <p>Your details have been saved</p>
+                <button type="button" onclick="closePopup()">Close</button>
+            </div>
+        </div>
     </nav>
     <main>
         <h1>Bird Quiz</h1>
