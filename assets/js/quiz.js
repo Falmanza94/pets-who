@@ -41,7 +41,7 @@ start.addEventListener('click', function () {
     ];
 
     let quizQuestion = 0;
-    //let highScore = localStorage.getItem('score') || 0;
+
     let currentScore = 0;
     let usedBirds = []; // Initialize used birds array
     let correctBird;
@@ -90,26 +90,26 @@ start.addEventListener('click', function () {
             if (quizQuestion < birds.length) {
                 renderQuestion();
             } else {
-                alert("Quiz finished! Your score: " + currentScore);    
+                alert("Quiz finished! Your score: " + currentScore);  
+                saveHighScore(currentScore); // Pass the current score to saveHighScore  
             }
-        }});
-
+        }
+    });
         // Function to save a new high score
         function saveHighScore(currentScore) {
         // Get the current high score from local storage
-        const currentHighScore = localStorage.getItem('highScore');
-    
+        const currentHighScore = parseInt(localStorage.getItem('highScore')) || 0;
         // If there is no high score or the new score is higher, save it
-        if (!currentHighScore || currentScore > currentHighScore) {
+        if (currentScore > currentHighScore > currentHighScore) {
             localStorage.setItem('highScore', currentScore);
-            console.log("New high score saved: " + currentScore);
+            alert("New high score saved: " + currentScore);
         } else {
-            console.log("Current high score remains: " + currentHighScore);
+            alert("Current high score remains: " + currentHighScore);
         }
         }
     
     // Initialize the quiz
     renderQuestion();
-    saveHighScore();
+    // saveHighScore();
     console.log(usedBirds);
 })
