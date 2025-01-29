@@ -69,7 +69,6 @@ li:hover {
     padding: 10px 60px;
     border-radius: 30px;
     background: #659B5E;
-    
 }
 
 .popup{
@@ -93,10 +92,6 @@ li:hover {
     margin: 30px 0 10px;
 
 }
-/* .popup button{ */
-
-
-/* } */
 
 .open-popup{
     visibility: visible;
