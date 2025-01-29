@@ -1,28 +1,52 @@
  /* The following is for the quiz.html */
-
+header {
+    background-image: url(../images/treetops.jpg);
+    font: yellow;
+}
  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-main {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    background: #007bff;
-    color: white;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    cursor: pointer;
-}
-li:hover {
-    background: #0056b3;
-}
+     font-family: Arial, sans-serif;
+     background-color: #090909;
+     padding: 20px;
+     align-content: center;
+ }
+
+ body.light-mode {
+     background-color: rgb(129, 193, 197);
+     color: rgb(55, 108, 73);
+ }
+
+ body.dark-mode {
+     background-color: black;
+     color: rgb(6, 76, 33);
+ }
+
+         main {
+         background: rgb(79, 119, 97);
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         align-content: center;
+
+
+     }
+
+     ul {
+         list-style-type: center;
+         padding: 0;
+         position: center;
+     }
+
+     li {
+         background: khaki;
+         color: rgb(13, 13, 13);
+         padding: 10px;
+         margin: 5px 0;
+         border-radius: 5px;
+         cursor: pointer;
+         max-width: 300px;
+         text-align: center;
+     }
+
+     li:hover {
+         background: #ab4545;
+     }

@@ -18,7 +18,7 @@ background: #659B5E;
 background-image: url(../images/treetops.jpg);
 background-size: cover;
 background-position: center;
-color:  #0A122A;
+color:  #999da9;
 
 
 }
@@ -35,7 +35,7 @@ align-content: flex-start;
 margin-left: 40px;
 background-color: #659B5E;
 border: #BBBBBB;
-color: white;
+color: rgb(7, 75, 41);
 }
 
 main{
@@ -54,7 +54,7 @@ aside {
 }
 
 .btn {
-    color: white;
+    color: rgb(6, 106, 76);
     background-color: #659B5E;
     border: #BBBBBB;
 }
