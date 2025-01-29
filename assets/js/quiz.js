@@ -92,6 +92,16 @@ start.addEventListener('click', function () {
             } else {
                 alert("Quiz finished! Your score: " + currentScore);  
                 saveHighScore(currentScore); // Pass the current score to saveHighScore  
+                const playAgain = confirm("Do you want to take the quiz again?");
+                if (playAgain) {
+                    // Reset the quiz
+                    currentScore = 0; // Reset score
+                    quizQuestion = 0; // Reset question index
+                    usedBirds = []; // Reset used birds
+                    renderQuestion(); // Start the quiz again
+                } else {
+                    alert("Thank you for playing!");
+                }
             }
         }
     });
@@ -100,7 +110,7 @@ start.addEventListener('click', function () {
         // Get the current high score from local storage
         const currentHighScore = parseInt(localStorage.getItem('highScore')) || 0;
         // If there is no high score or the new score is higher, save it
-        if (currentScore > currentHighScore > currentHighScore) {
+        if (currentScore > currentHighScore) {
             localStorage.setItem('highScore', currentScore);
             alert("New high score saved: " + currentScore);
         } else {
