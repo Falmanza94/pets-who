@@ -11,6 +11,15 @@ toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
 });
 
+let popup = document.getElementById("popup")
+
+function openPopup(){
+    popup.classList.add("open-popup");
+}
+function closePopup(){
+    popup.classList.remove("open-popup");
+}
+
 start.addEventListener('click', function () {
     const birds = [
         { name: 'American Robin', image:'assets/images/american-robin.jpg' },
