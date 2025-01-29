@@ -12,6 +12,32 @@ h2 {
 }
 
 header {
+<<<<<<< HEAD
+padding: 100px;
+text-align: center;
+background: #659B5E;
+background-image: url(../images/treetops.jpg);
+background-size: cover;
+background-position: center;
+color:  #999da9;
+
+
+}
+nav {
+    display: flex;
+    background: #445552;
+
+}
+
+button {
+padding: 5px;
+display: flex;
+align-content: flex-start;
+margin-left: 40px;
+background-color: #659B5E;
+border: #BBBBBB;
+color: rgb(7, 75, 41);
+=======
     padding: 100px;
     text-align: center;
     background-image: url(../images/treetops.jpg);
@@ -27,6 +53,7 @@ button {
     background-color: #659B5E;
     border: #BBBBBB;
     color: white;
+>>>>>>> fe1b16db97abb9b6f41bfe3dc688464a3ec910cc
 }
 
 main{
@@ -54,10 +81,14 @@ aside {
 }
 
 .btn {
+<<<<<<< HEAD
+    color: rgb(6, 106, 76);
+=======
     width: 250px;
     height: 100px;
     font-size: 35px;
     color: white;
+>>>>>>> fe1b16db97abb9b6f41bfe3dc688464a3ec910cc
     background-color: #659B5E;
     border: #BBBBBB;
 }

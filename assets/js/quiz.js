@@ -4,6 +4,12 @@ const start = document.querySelector('#start');
 const quizQuestionElement = document.querySelector('#quizQuestion');
 const birdImageElement = document.querySelector('#birdImage'); // Select the image element
 const possibleAnswersElement = document.querySelector('#possibleAnswers');
+const toggleButton = document.getElementById('mode-toggle');
+
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+});
 
 let popup = document.getElementById("popup")
 
